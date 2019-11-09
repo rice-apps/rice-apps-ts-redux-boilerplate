@@ -1,21 +1,27 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import * as COLORS from '../utils/BackgroundColors'
+import BG_COLOR from '../utils/BackgroundColors'
 import {setColor} from '../actions/BackgroundActions';
+import { State } from '../reducers/types';
 
-const ColorSelectControl = ({bgColor, setColor}) => (
+type Props = {
+    bgColor: BG_COLOR,
+    setColor: Function
+}
+
+const ColorSelectControl:React.FC<Props> = ({bgColor, setColor}: Props) => (
     <div style={{marginTop: 8}}>
-        <button onClick={() => bgColor == COLORS.BLUE_LIGHT ? setColor(COLORS.RED_LIGHT) : setColor(COLORS.BLUE_LIGHT)}>
+        <button onClick={() => bgColor == BG_COLOR.BLUE_LIGHT ? setColor(BG_COLOR.RED_LIGHT) : setColor(BG_COLOR.BLUE_LIGHT)}>
             Click Me!
         </button>
     </div>
 );
 
 export default connect(
-    (state) => ({
+    (state: State) => ({
         bgColor: state.BackgroundReducer.color, 
     }),
     (dispatch) => ({
-        setColor: color => dispatch(setColor(color))
+        setColor: (color: BG_COLOR) => dispatch(setColor(color))
     })
-)(ColorSelectControl);
+)(ColorSelectControl as React.FC);
