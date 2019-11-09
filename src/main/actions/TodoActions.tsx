@@ -1,0 +1,30 @@
+import {ACTION_TYPES, TodoActionTypes} from './types';
+
+export const addTodo = (description: String, deadline: String) => {
+    let id = Math.random().toFixed(0);
+    let completed = false;
+    let todo = {
+        id,
+        description,
+        deadline,
+        completed
+    };
+    return {
+        type: ACTION_TYPES.ADD_TODO,
+        todo
+    };
+}
+
+export const removeTodo = (ID: Int32Array) => {
+    return {
+        type: ACTION_TYPES.REMOVE_TODO,
+        ID
+    };
+}
+
+export const toggleTodo = (ID: Int32Array) => {
+    return {
+        type: ACTION_TYPES.TOGGLE_TODO,
+        ID
+    };
+}
