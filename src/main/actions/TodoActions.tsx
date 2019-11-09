@@ -1,13 +1,13 @@
 import {ACTION_TYPES, TodoActionTypes} from './ActionTypes';
+import { Todo } from '../utils/types';
 
-export const addTodo = (description: String, deadline: String) => {
-    let id = Math.floor(Math.random() * 100);
-    let completed = false;
-    let todo = {
-        id,
+export const addTodo = (description: string, deadline: string): TodoActionTypes => {
+    let ID = Math.floor(Math.random() * 100);
+    let todo : Todo = {
+        ID,
         description,
         deadline,
-        completed
+        completed : false
     };
     return {
         type: ACTION_TYPES.ADD_TODO,
@@ -15,14 +15,14 @@ export const addTodo = (description: String, deadline: String) => {
     };
 }
 
-export const removeTodo = (ID: number) => {
+export const removeTodo = (ID: number): TodoActionTypes => {
     return {
         type: ACTION_TYPES.REMOVE_TODO,
         ID
     };
 }
 
-export const toggleTodo = (ID: number) => {
+export const toggleTodo = (ID: number): TodoActionTypes => {
     return {
         type: ACTION_TYPES.TOGGLE_TODO,
         ID

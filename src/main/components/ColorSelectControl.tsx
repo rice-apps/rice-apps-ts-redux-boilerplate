@@ -22,6 +22,6 @@ export default connect(
         bgColor: state.BackgroundReducer.color, 
     }),
     (dispatch) => ({
-        setColor: (color: String) => dispatch(setColor(color))
+        setColor: (color: BG_COLOR) => dispatch(setColor(color))
     })
 )(ColorSelectControl as React.FC);
