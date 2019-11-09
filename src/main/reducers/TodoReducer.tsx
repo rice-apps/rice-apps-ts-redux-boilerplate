@@ -1,4 +1,4 @@
-import { ACTION_TYPES, TodoActionTypes } from "../actions/types";
+import { ACTION_TYPES, TodoActionTypes } from "../actions/ActionTypes";
 
 const defaultTodoState = {
     todos: [

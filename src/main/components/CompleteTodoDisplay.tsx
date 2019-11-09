@@ -2,8 +2,16 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {toggleTodo} from '../actions/TodoActions';
 import TodoDisplay from './TodoDisplay';
+import { State } from '../reducers/types';
+import { Todo } from '../utils/types';
 
-const CompleteTodoDisplay = ({todos, bgColor, toggleTodo}) => {
+type Props = {
+    todos: Todo[],
+    bgColor: string,
+    toggleTodo: (id: number) => void
+}
+
+const CompleteTodoDisplay: React.FC<Props> = ({todos, bgColor, toggleTodo}: Props) => {
     let filteredTodos = todos.filter(todo => todo.completed);
     return (<TodoDisplay 
     todosCategory={"Complete"}
@@ -14,13 +22,13 @@ const CompleteTodoDisplay = ({todos, bgColor, toggleTodo}) => {
 }
 
 export default connect(
-    (state) => ({
+    (state: State) => ({
         todos: state.TodoReducer.todos,
         bgColor: state.BackgroundReducer.color, 
     }),
     (dispatch) => {
         return {
-            toggleTodo: id => dispatch(toggleTodo(id))
+            toggleTodo: (id: number) => dispatch(toggleTodo(id))
         }
     }
-)(CompleteTodoDisplay);
+)(CompleteTodoDisplay as React.FC);

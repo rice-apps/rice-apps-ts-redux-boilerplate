@@ -1,6 +1,15 @@
 import React from 'react'
+import { Todo } from '../utils/types';
 
-const TodoDisplay = ({todosCategory, filteredTodos, bgColor, toggleTodo}) => {
+
+type Props = {
+    todosCategory: String,
+    filteredTodos: Todo[],
+    bgColor: string,
+    toggleTodo: (id: number) => void
+}
+
+const TodoDisplay = ({todosCategory, filteredTodos, bgColor, toggleTodo}: Props) => {
     console.log(toggleTodo);
     return (
         <div style={{backgroundColor: bgColor}}>

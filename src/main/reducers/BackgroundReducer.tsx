@@ -1,4 +1,4 @@
-import { ACTION_TYPES, BackgroundActionTypes } from "../actions/types";
+import { ACTION_TYPES, BackgroundActionTypes } from "../actions/ActionTypes";
 import BG_COLOR from '../utils/BackgroundColors'
 
 const defaultBackgroundState = {

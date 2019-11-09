@@ -15,14 +15,14 @@ export const addTodo = (description: String, deadline: String) => {
     };
 }
 
-export const removeTodo = (ID: Int32Array) => {
+export const removeTodo = (ID: number) => {
     return {
         type: ACTION_TYPES.REMOVE_TODO,
         ID
     };
 }
 
-export const toggleTodo = (ID: Int32Array) => {
+export const toggleTodo = (ID: number) => {
     return {
         type: ACTION_TYPES.TOGGLE_TODO,
         ID
