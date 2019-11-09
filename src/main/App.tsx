@@ -1,5 +1,5 @@
 import React from "react";
-import ColorSelectControl from './components/ColorSelectControl';
+import TodoControls from './components/TodoControls';
 import IncompleteTodoDisplay from './components/IncompleteTodoDisplay';
 import CompleteTodoDisplay from './components/CompleteTodoDisplay';
 import "./App.css";
@@ -7,7 +7,7 @@ import "./App.css";
 const App: React.FC = () => {
   return (
   <div className="App" style={{ display: "inline" }}>
-      <ColorSelectControl />
+      <TodoControls />
       <IncompleteTodoDisplay />
       <CompleteTodoDisplay />
   </div> 

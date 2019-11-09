@@ -6,10 +6,10 @@ import { AppState } from '../reducers/RootReducer';
 
 type Props = {
     bgColor: BG_COLOR,
-    setColor: Function
+    setColor: (color: BG_COLOR) => void
 }
 
-const ColorSelectControl:React.FC<Props> = ({bgColor, setColor}: Props) => (
+const ColorSelectControl: React.FC<Props> = ({bgColor, setColor}: Props) => (
     <div style={{marginTop: 8}}>
         <button onClick={() => bgColor === BG_COLOR.BLUE_LIGHT ? setColor(BG_COLOR.RED_LIGHT) : setColor(BG_COLOR.BLUE_LIGHT)}>
             Click Me!
@@ -24,4 +24,4 @@ export default connect(
     (dispatch) => ({
         setColor: (color: BG_COLOR) => dispatch(setColor(color))
     })
-)(ColorSelectControl as React.FC);
+)(ColorSelectControl);

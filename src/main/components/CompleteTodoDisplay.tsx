@@ -11,15 +11,14 @@ type Props = {
     toggleTodo: (id: number) => void
 }
 
-const CompleteTodoDisplay: React.FC<Props> = ({todos, bgColor, toggleTodo}: Props) => {
-    let filteredTodos = todos.filter(todo => todo.completed);
-    return (<TodoDisplay 
-    todosCategory={"Complete"}
-    filteredTodos={filteredTodos} 
-    bgColor={bgColor}
-    toggleTodo={toggleTodo}
-    />);
-}
+const CompleteTodoDisplay: React.FC<Props> = ({todos, bgColor, toggleTodo}: Props) => (
+    <TodoDisplay 
+        todosCategory={"Complete"}
+        filteredTodos={todos.filter(todo => todo.completed)} 
+        bgColor={bgColor}
+        toggleTodo={toggleTodo} 
+    />
+);
 
 export default connect(
     (state: AppState) => ({
@@ -31,4 +30,4 @@ export default connect(
             toggleTodo: (id: number) => dispatch(toggleTodo(id))
         }
     }
-)(CompleteTodoDisplay as React.FC);
+)(CompleteTodoDisplay);

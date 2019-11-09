@@ -17,7 +17,10 @@ const TodoReducer = (state: TodoState = defaultState, action: TodoActionTypes): 
     let newTodos: Todo[] = [...state.todos];
     switch(action.type) {
         case ACTION_TYPES.ADD_TODO:
-            newTodos.push((action as AddTodoInterface).todo)
+            let newTodo = (action as AddTodoInterface).todo
+            while (newTodos.map(t=>t.ID).includes(newTodo.ID))
+                newTodo.ID = newTodo.ID + 100;
+            newTodos.push(newTodo)
             break;
         case ACTION_TYPES.REMOVE_TODO:
             const removeID = (action as RemoveTodoInterface).ID
