@@ -1,5 +1,5 @@
 import BG_COLOR from "../utils/BackgroundColors";
-import { Todo } from "./StateTypes";
+import { Todo } from "./BaseTypes";
 
 export enum ACTION_TYPES {
     ADD_TODO = "ADD_TODO",

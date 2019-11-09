@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {toggleTodo} from '../actions/TodoActions';
 import TodoDisplay from './TodoDisplay';
-import { State } from '../types/ReducerTypes';
+import { AppState } from '../reducers/RootReducer';
 import { Todo } from '../utils/types';
 
 type Props = {
@@ -22,9 +22,9 @@ const CompleteTodoDisplay: React.FC<Props> = ({todos, bgColor, toggleTodo}: Prop
 }
 
 export default connect(
-    (state: State) => ({
-        todos: state.TodoReducer.todos,
-        bgColor: state.BackgroundReducer.color, 
+    (state: AppState) => ({
+        todos: state.todoState.todos,
+        bgColor: state.bgState.color, 
     }),
     (dispatch) => {
         return {

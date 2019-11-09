@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { toggleTodo } from '../actions/TodoActions';
 import TodoDisplay from './TodoDisplay';
 import { Todo } from '../utils/types';
-import { State } from '../types/ReducerTypes';
+import { AppState } from '../reducers/RootReducer';
 
 type Props = {
     todos: Todo[],
@@ -22,9 +22,9 @@ const IncompleteTodoDisplay: React.FC<Props> = ({todos, bgColor, toggleTodo}) =>
 }
 
 export default connect(
-    (state: State) => ({
-        todos: state.TodoReducer.todos,
-        bgColor: state.BackgroundReducer.color, 
+    (state: AppState) => ({
+        todos: state.todoState.todos,
+        bgColor: state.bgState.color, 
     }),
     (dispatch) => ({
         toggleTodo: (id: number) => dispatch(toggleTodo(id))

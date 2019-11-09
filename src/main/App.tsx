@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/logo.svg";
 import ColorSelectControl from './components/ColorSelectControl';
 import IncompleteTodoDisplay from './components/IncompleteTodoDisplay';
 import CompleteTodoDisplay from './components/CompleteTodoDisplay';

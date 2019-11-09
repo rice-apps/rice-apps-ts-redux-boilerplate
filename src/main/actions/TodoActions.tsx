@@ -1,5 +1,5 @@
 import {ACTION_TYPES, TodoActionTypes} from '../types/ActionTypes';
-import { Todo } from '../types/StateTypes';
+import { Todo } from '../types/BaseTypes';
 
 export const addTodo = (description: string, deadline: string): TodoActionTypes => {
     let ID = Math.floor(Math.random() * 100);
