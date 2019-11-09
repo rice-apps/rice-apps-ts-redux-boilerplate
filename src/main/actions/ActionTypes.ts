@@ -1,4 +1,5 @@
 import BG_COLOR from "../utils/BackgroundColors";
+import { Todo } from "../utils/types";
 
 export enum ACTION_TYPES {
     ADD_TODO = "ADD_TODO",
@@ -12,15 +13,15 @@ interface MainActionInterface {
 }
 
 interface AddTodoInterface extends MainActionInterface {
-    todo: any
+    todo: Todo
 }
 
 interface RemoveTodoInterface extends MainActionInterface {
-    ID: any
+    ID: number
 }
 
 interface ToggleTodoInterface extends MainActionInterface {
-    ID: any
+    ID: number
 }
 
 interface SetColorInterface extends MainActionInterface {
@@ -29,5 +30,5 @@ interface SetColorInterface extends MainActionInterface {
 
 // Union interface
 
-export type TodoActionTypes = AddTodoInterface & RemoveTodoInterface & ToggleTodoInterface
+export type TodoActionTypes = AddTodoInterface | RemoveTodoInterface | ToggleTodoInterface
 export type BackgroundActionTypes = SetColorInterface
