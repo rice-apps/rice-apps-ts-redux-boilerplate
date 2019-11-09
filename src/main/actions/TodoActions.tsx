@@ -1,11 +1,12 @@
 import {ACTION_TYPES, TodoActionTypes} from './ActionTypes';
 
 export const addTodo = (description: String, deadline: String) => {
-    let id = Math.random().toFixed(0);
+    let id = Math.floor(Math.random() * 100);
     let completed = false;
     let todo = {
         id,
         description,
+        deadline,
         completed
     };
     return {

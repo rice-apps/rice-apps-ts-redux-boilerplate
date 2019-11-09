@@ -1,4 +1,4 @@
-import { ACTION_TYPES } from './types';
+import { ACTION_TYPES } from './ActionTypes';
 
 export const setColor = (color: String) => {
     return {
