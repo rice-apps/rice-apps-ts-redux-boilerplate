@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { toggleTodo } from '../actions/TodoActions';
 import TodoDisplay from './TodoDisplay';
 import { Todo } from '../utils/types';
-import { State } from '../reducers/types';
+import { State } from '../types/ReducerTypes';
 
 type Props = {
     todos: Todo[],

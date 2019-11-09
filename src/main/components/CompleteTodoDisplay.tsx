@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {toggleTodo} from '../actions/TodoActions';
 import TodoDisplay from './TodoDisplay';
-import { State } from '../reducers/types';
+import { State } from '../types/ReducerTypes';
 import { Todo } from '../utils/types';
 
 type Props = {
