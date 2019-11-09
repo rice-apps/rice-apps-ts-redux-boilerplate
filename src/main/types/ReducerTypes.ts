@@ -1,14 +1,15 @@
 import { Todo } from "../utils/types";
+import BG_COLOR from "../utils/BackgroundColors";
 
 interface TodoReducer {
     todos: Todo[]
 }
 
 interface BackgroundReducer {
-    color: String
+    color: BG_COLOR
 }
 
 export interface State {
-    TodoReducer: TodoReducer,
-    BackgroundReducer: BackgroundReducer
+    todoState: TodoReducer,
+    bgState: BackgroundReducer
 }

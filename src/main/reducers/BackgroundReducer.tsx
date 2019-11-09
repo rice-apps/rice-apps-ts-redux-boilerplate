@@ -1,15 +1,13 @@
 import {ACTION_TYPES, BackgroundActionTypes } from "../types/ActionTypes";
-import { BackgroundState } from "../types/StateTypes"
-import BG_COLOR from '../utils/BackgroundColors'
+import { State } from "../types/ReducerTypes";
+import { defaultState } from "./index"
 
-const defaultBackgroundState = {
-    color: BG_COLOR.BLUE_LIGHT
-}
-
-const BackgroundReducer = (state: BackgroundState = defaultBackgroundState, action: BackgroundActionTypes) => {
+const BackgroundReducer = (state: State = defaultState, action: BackgroundActionTypes): State => {
+    let newBGState;
     switch(action.type) {
         case ACTION_TYPES.SET_COLOR:
-            return {...state, color: action.color};
+            newBGState = {color: action.color}
+            return {...state, bgState: newBGState};
         default:
             return {...state};
     }

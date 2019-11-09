@@ -1,18 +1,8 @@
 import { ACTION_TYPES, TodoActionTypes, AddTodoInterface, RemoveTodoInterface, ToggleTodoInterface } from "../types/ActionTypes";
-import { Todo, TodoState } from "../types/StateTypes";
+import { State } from "../types/ReducerTypes";
+import { defaultState } from "./index"
 
-const defaultTodoState: TodoState = {
-    todos: [
-        {
-            ID: 123,
-            description: "Hello",
-            deadline: "10/23",
-            completed: false
-        }
-    ]
-}
-
-const TodoReducer = (state: TodoState = defaultTodoState, action: TodoActionTypes) => {
+const TodoReducer = (state: State = defaultState, action: TodoActionTypes) => {
     let newTodos : Array<Todo>;
     switch(action.type) {
         case ACTION_TYPES.ADD_TODO:
