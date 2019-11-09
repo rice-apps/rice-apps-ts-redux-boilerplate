@@ -1,4 +1,4 @@
-import {ACTION_TYPES, TodoActionTypes} from './types';
+import {ACTION_TYPES, TodoActionTypes} from './ActionTypes';
 
 export const addTodo = (description: String, deadline: String) => {
     let id = Math.random().toFixed(0);
@@ -6,7 +6,6 @@ export const addTodo = (description: String, deadline: String) => {
     let todo = {
         id,
         description,
-        deadline,
         completed
     };
     return {
