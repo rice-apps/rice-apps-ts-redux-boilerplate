@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {toggleTodo} from '../actions/TodoActions';
+import {toggleTodo} from './TodoActions';
 import TodoDisplay from './TodoDisplay';
-import { AppState } from '../reducers/RootReducer';
-import { Todo } from '../utils/types';
+import { Todo } from '../utils/BaseTypes';
+import { AppState } from '../RootReducer';
 
 type Props = {
     todos: Todo[],

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import TodoReducer from './TodoReducer';
-import BackgroundReducer from './BackgroundReducer';
+import TodoReducer from './todo/TodoReducer';
+import BackgroundReducer from './background/BackgroundReducer';
 
 const RootReducer = combineReducers({
   todoState: TodoReducer, 

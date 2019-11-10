@@ -1,6 +1,9 @@
-import { ACTION_TYPES, TodoActionTypes, AddTodoInterface, RemoveTodoInterface, ToggleTodoInterface } from "../types/ActionTypes";
-import { TodoState } from "../types/ReducerTypes";
-import { Todo } from "../types/BaseTypes";
+import { TodoActionTypes, AddTodoInterface, RemoveTodoInterface, ToggleTodoInterface } from "./TodoTypes";
+import { ACTION_TYPES, Todo } from "../utils/BaseTypes";
+
+export interface TodoState {
+    todos: Todo[]
+}
 
 const defaultState = {
     todos: [

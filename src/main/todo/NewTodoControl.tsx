@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {connect} from 'react-redux';
-import {addTodo} from '../actions/TodoActions';
+import {addTodo} from './TodoActions';
 
 type Props = {
     addTodo: (description: string, deadline: string) => void

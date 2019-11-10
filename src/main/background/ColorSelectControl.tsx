@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import BG_COLOR from '../utils/BackgroundColors'
-import {setColor} from '../actions/BackgroundActions';
-import { AppState } from '../reducers/RootReducer';
+import {setColor} from './BackgroundActions';
+import { AppState } from '../RootReducer';
 
 type Props = {
     bgColor: BG_COLOR,
