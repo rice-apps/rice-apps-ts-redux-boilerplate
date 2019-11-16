@@ -4,3 +4,8 @@ export type Todo = {
     deadline: string,
     completed: boolean
 }
+
+export type Chart = {
+    ID: number,
+    description: string,
+}
