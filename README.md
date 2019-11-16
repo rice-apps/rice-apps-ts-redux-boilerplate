@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### npm install react-tiny-virtual-list --save
+
+Need to run this in order for Virtual List component to render
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
